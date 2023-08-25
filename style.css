@@ -1,0 +1,89 @@
+/**Colors-https://coolors.co/e8aeb7-b8e1ff-bf96c5-41337a-874000**/
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Permanent+Marker&display=swap');
+
+body {
+    background-color: #e8aeb7;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+    border: #bf96c5;
+    border-style: solid;
+    border-radius: 5px;
+    overflow: none;
+}
+
+#header-title {
+    font-size: 2em;
+    color: #bf96c5;
+}
+
+h1, h2 {
+    font-family: "Permanent Marker", 'Franklin Gothic Medium', 'Arial Narrow';
+}
+
+#main-title {
+    font-size: 1.5em;
+    color:#bf96c5;
+}
+
+p {
+    font-size:.8em;
+    color: #b8e1ff;
+    font-family: Kalam, 'Times New Roman', Times;
+    display: block;
+    max-width:30%;
+    max-height: 200px;
+    margin: auto auto;
+    overflow: scroll;
+}
+
+#gallery {
+    max-width:300px;
+    margin: 0 auto;
+}
+
+#current-img {
+    width: 100%;
+}
+
+#thumbs {
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#thumbs img {
+    max-width: 50px;
+}
+
+footer section .links {
+    display: flex;
+    flex: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.etsy-link, .email-link {
+    text-decoration: none;
+    color: #b8e1ff;
+}
+
+.etsy-link:hover, .email-link:hover {
+    text-decoration: underline;
+    color: #bf96c5;
+    background-color:#b8e1ff;
+}
+
+.thumb {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
