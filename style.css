@@ -6,10 +6,9 @@ body {
     margin: 0 auto;
     text-align: center;
     max-width: 100%;
-    border: #bf96c5;
+    border: 5px #bf96c5;
     border-style: solid;
-    border-radius: 5px;
-    overflow: none;
+    border-radius: 25px;
 }
 
 #header-title {
@@ -24,6 +23,11 @@ h1, h2, h4 {
 #main-title, h4 {
     font-size: 1.5em;
     color:#bf96c5;
+}
+
+#footer-title {
+    font-size: 1.5em;
+    color:#bf96c5
 }
 
 p {
@@ -56,16 +60,18 @@ p {
     max-width: 50px;
 }
 
-footer section .links {
+footer section {
     display: flex;
-    flex: column;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
 }
 
 .etsy-link, .email-link {
     text-decoration: none;
     color: #b8e1ff;
+    padding: 5px;
+    box-sizing: border-box;
+    max-width: 25%;
+    margin: auto auto;
 }
 
 .etsy-link:hover, .email-link:hover {
@@ -82,6 +88,40 @@ footer section .links {
     cursor: pointer;
 }
 
+#lscreen-gallery {
+    display: none;
+    visibility: hidden;
+}
+
+@media  screen and (min-width: 900px) {
+    body {
+        max-width: 100%;
+        border-radius: 0px;
+    }
+
+    #current-img {
+        display: none;
+        visibility: hidden;
+    }
+
+    .thumb {
+        display: none;
+        visibility: hidden;
+    }
+
+    #lscreen-gallery {
+        display: flex;
+        visibility: visible;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #lscreen-gallery img {
+        max-width: 20%px;
+        max-height: 200px;
+        margin-right: 15px;
+    }
+}
 
 
 
