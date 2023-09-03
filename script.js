@@ -3,7 +3,7 @@
 var imageThumbs=document.getElementById("thumbs");
 var currentImage= document.getElementById("current-img");
 
-for (var i=1; i<=5; i++) {
+for (var i=1; i<=12; i++) {
     var thumb= document.createElement("img");
     thumb.src= "images/image" + i + ".jpg"
     imageThumbs.appendChild(thumb);
