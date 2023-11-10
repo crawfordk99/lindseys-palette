@@ -54,6 +54,8 @@ p {
     display:flex;
     justify-content: center;
     margin-top: 20px;
+    max-width: 100px;
+    overflow: scroll;
 }
 
 #thumbs img {
@@ -81,8 +83,6 @@ footer section {
 }
 
 .thumb {
-    max-width: 50px;
-    max-height: 50px;
     object-fit: cover;
     margin-right: 10px;
     cursor: pointer;
