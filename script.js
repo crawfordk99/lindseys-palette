@@ -23,7 +23,7 @@ for (var i=1; i<=12; i++) {
 
 // Form submission handling
 const form = document.getElementById('contact-form');
-console.log(form);
+console.log(form); // Check if the form element is correctly selected
 const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
