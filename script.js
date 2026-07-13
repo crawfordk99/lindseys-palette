@@ -22,12 +22,12 @@ for (var i=1; i<=12; i++) {
 }
 
 // Form submission handling
-const form = document.getElementById('contact-form');
+const form = document.getElementById('form');
 console.log(form); // Check if the form element is correctly selected
 const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const formData = new FormData(form);
     formData.append("access_key", "0a24106f-9220-41c1-96e3-2c4aa73f75c1");
