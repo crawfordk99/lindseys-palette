@@ -23,6 +23,7 @@ for (var i=1; i<=12; i++) {
 
 // Form submission handling
 const form = document.getElementById('contact-form');
+console.log(form);
 const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
@@ -32,6 +33,7 @@ form.addEventListener('submit', async (e) => {
     formData.append("access_key", "0a24106f-9220-41c1-96e3-2c4aa73f75c1");
 
     const originalText = submitBtn.textContent;
+    console.log(originalText);
 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
