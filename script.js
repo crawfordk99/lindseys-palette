@@ -23,6 +23,7 @@ for (var i=1; i<=12; i++) {
 
 // Updated form handling code to ensure it works correctly with the form element and submit button
 // , including safety checks and proper handling of input/button types.
+// Ensures also that the page is loaded with all the elements before attaching event listeners.
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Find the element with the ID
