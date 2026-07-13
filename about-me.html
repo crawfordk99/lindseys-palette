@@ -63,10 +63,12 @@
     </main>
     <footer>
         <h2 id="footer-title">Contact Me</h2>
-        <section class="links">
-            <a class="etsy-link" href="https://www.etsy.com/shop/LindseysGiftShop?ref=usf_2020">My Etsy Shop</a>
-            <a class="email-link" href="mailto: lindseyrosecrawford@gmail.com">My email: <br> lindseyrosecrawford@gmail.com</a>
-        </section>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
         <div class="copyright">
             Lindsey's Palette &copy; 2023 - Lindsey Crawford
         </div>
