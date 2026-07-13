@@ -21,44 +21,70 @@ for (var i=1; i<=12; i++) {
     );
 }
 
-// Form submission handling
-const form = document.getElementById('form');
-console.log(form); // Check if the form element is correctly selected
-const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault()
-
-    const formData = new FormData(form);
-    formData.append("access_key", "0a24106f-9220-41c1-96e3-2c4aa73f75c1");
-
-    const originalText = submitBtn.textContent;
-    console.log(originalText);
-
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
-
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Success! Your message has been sent.");
-            form.reset();
-        } else {
-            alert("Error: " + data.message);
-        }
-
-    } catch (error) {
-        alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Find the element with the ID
+    let form = document.getElementById('form');
+    
+    // If the ID was accidentally put on the Webflow Wrapper instead of the form itself:
+    if (form && form.tagName !== 'FORM') {
+        form = form.querySelector('form');
     }
+
+    // Safety check to ensure we actually found a form
+    if (!form) {
+        console.error("Could not find the contact form on the page.");
+        return;
+    }
+
+    // 2. Safely find the submit button (handling input vs button tags)
+    const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
+    if (!submitBtn) {
+        console.error("Could not find the submit button inside the form.");
+        return;
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        formData.append("access_key", "0a24106f-9220-41c1-96e3-2c4aa73f75c1");
+
+        // Works whether it's an <input> (value) or <button> (textContent)
+        const originalText = submitBtn.value || submitBtn.textContent;
+
+        if (submitBtn.tagName === 'INPUT') {
+            submitBtn.value = "Sending...";
+        } else {
+            submitBtn.textContent = "Sending...";
+        }
+        submitBtn.disabled = true;
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Success! Your message has been sent.");
+                form.reset();
+            } else {
+                alert("Error: " + data.message);
+            }
+
+        } catch (error) {
+            alert("Something went wrong. Please try again.");
+        } finally {
+            if (submitBtn.tagName === 'INPUT') {
+                submitBtn.value = originalText;
+            } else {
+                submitBtn.textContent = originalText;
+            }
+            submitBtn.disabled = false;
+        }
+    });
 });
 
 
