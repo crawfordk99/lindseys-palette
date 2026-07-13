@@ -21,6 +21,7 @@ for (var i=1; i<=12; i++) {
     );
 }
 
+// Form submission handling
 const form = document.getElementById('contact-form');
 const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
