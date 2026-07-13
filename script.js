@@ -21,7 +21,7 @@ for (var i=1; i<=12; i++) {
     );
 }
 
-const form = document.getElementById('form');
+const form = document.getElementById('contact-form');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
